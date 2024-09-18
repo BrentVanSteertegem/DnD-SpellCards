@@ -1,0 +1,20 @@
+@import url('reset.css');
+@import url('tailwind.css');
+
+@font-face {
+    font-family: 'Bookmania';
+    src: url('../assets/fonts/BookmaniaRegular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bookmania';
+    src: url('../assets/fonts/BookmaniaBold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    font-family: 'BookMania', serif;
+}
