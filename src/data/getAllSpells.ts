@@ -6,7 +6,7 @@ export const getAllSpells = async () => {
   )
 
   return Promise.all(
-    spellIndexes.results.map((index) =>
+    spellIndexes.results.map((index: any) =>
       fetch(BASE_URL + index.url).then((response) => response.json())
     )
   )

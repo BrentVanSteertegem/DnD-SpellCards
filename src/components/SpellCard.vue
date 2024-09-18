@@ -1,12 +1,15 @@
 <template>
-    <h1>{{ name }}</h1>
+    <h1>{{ spell.name }}</h1>
 </template>
 
-<script>
+<script lang='ts'>
+  import { defineProps } from 'vue'
+  import { Spell } from '@/types'
+
   export default {
     name: 'SpellCard',
     props: {
-      name: String
+      spell: defineProps<Spell>()
     }
   }
 </script>

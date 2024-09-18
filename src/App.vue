@@ -1,12 +1,13 @@
 <template>
-  <li v-for="spell in spells" :key="spell.id">
-    <SpellCard :name="spell.name"/>
+  <li v-for="spell in spells" :key="spell.index">
+    <SpellCard :spell="spell"/>
   </li>
 </template>
 
-<script>
-  import { SpellCard } from './components/index.ts'
-  import { getAllSpells } from './data/getAllSpells.ts'
+<script lang='ts'>
+  import { SpellCard } from '@/components'
+  import { getAllSpells } from '@/data/getAllSpells'
+  import { Spell } from '@/types'
 
   export default {
     name: 'App',
@@ -15,7 +16,7 @@
     },
     data() {
       return {
-        spells: []
+        spells: [] as Spell[]
       }
     },
     mounted() {
