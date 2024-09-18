@@ -15,15 +15,15 @@
             <p>{{spell!.casting_time}}</p>
         </section>
         <section v-if="spell!.range" class="items-center gap-2.5">
-            <b>Range:</b>
+            <b class="text-lg">Range:</b>
             <p>{{spell!.range}}</p>
         </section>
         <section v-if="spell!.components" class="items-center gap-2.5">
-            <b>Components:</b>
+            <b class="text-lg">Components:</b>
             <p>{{spell!.components.join(", ")}}</p>
         </section>
         <section v-if="spell!.duration" class="items-center gap-2.5">
-            <b>Duration:</b>
+            <b class="text-lg">Duration:</b>
             <p>{{spell!.duration}}</p>
         </section>
       </section>
