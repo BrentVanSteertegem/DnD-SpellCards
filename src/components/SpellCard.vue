@@ -1,6 +1,6 @@
 <template>
   <div class="spellcard w-80 p-8 rounded-3xl text-base">
-    <section class="flex-col gap-4">
+    <section class="flex-col gap-4 h-96 overflow-auto">
       <div>
           <h2 class="text-xl uppercase">{{spell!.name}}</h2>
           <i>
@@ -27,7 +27,7 @@
             <p>{{spell!.duration}}</p>
         </section>
       </section>
-      <p v-if="spell!.desc">{{typeof(spell!.desc) == "object" ? spell!.desc[0] : spell!.desc}}</p>
+      <p v-if="spell!.desc" class="desc">{{typeof(spell!.desc) == "object" ? spell!.desc[0] : spell!.desc}}</p>
   </section>
   </div>
 </template>
@@ -52,7 +52,26 @@
 <style scoped>
   .spellcard {
     background: url("/src/assets/images/spellcard_background.jpg");
-    min-height: 28.5rem;
+    height: 28rem;
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 4px #582D3088; 
+      border-radius: 0.5rem;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #582D3099;
+      border-radius: 0.5rem;
+    }
+
+    &:hover {
+      ::-webkit-scrollbar-thumb {
+        background: #582D30dd;
+      }
+    }
   }
 
   .spellcard h2 {
