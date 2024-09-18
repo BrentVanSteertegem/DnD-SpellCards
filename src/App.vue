@@ -1,15 +1,18 @@
 <template>
-  <li v-for="spell in spells" :key="spell.index">
-    <SpellCard :spell="spell"/>
-  </li>
+  <ul class="flex flex-wrap gap-4 justify-center p-4">
+    <li class="list-none" v-for="spell in spells" :key="spell.index">
+      <SpellCard :spell="spell"/>
+    </li>
+  </ul>
 </template>
 
 <script lang='ts'>
-  import { SpellCard } from '@/components'
-  import { getAllSpells } from '@/data/getAllSpells'
+  import { defineComponent } from 'vue'
   import { Spell } from '@/types'
+  import { getAllSpells } from '@/data/getAllSpells'
+  import { SpellCard } from '@/components'
 
-  export default {
+  export default defineComponent({
     name: 'App',
     components: {
       SpellCard,
@@ -35,5 +38,5 @@
 
       fetchSpells()
     }
-  }
+  })
 </script>
