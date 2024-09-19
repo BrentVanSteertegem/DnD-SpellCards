@@ -1,11 +1,14 @@
 {
   "name": "dnd-spellcards",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://BrentVanSteertegem.github.io/dnd-spellcards",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "autoprefixer": "^10",
@@ -27,6 +30,7 @@
     "@vue/eslint-config-typescript": "^9.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "gh-pages": "^6.1.1",
     "typescript": "~4.5.5",
     "vue-cli-plugin-tailwind": "~3.0.0"
   },
