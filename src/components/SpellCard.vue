@@ -55,13 +55,6 @@
     height: 28rem;
 
     /* Scrollbar styling */
-    ::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-    ::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 4px #582D3088; 
-      border-radius: 0.5rem;
-    }
     ::-webkit-scrollbar-thumb {
       background: #582D3099;
       border-radius: 0.5rem;

@@ -1,7 +1,7 @@
 <template>
   <section>
     <Filter :filter="filter" @passSelectedClass="updateSelectedClasses($event)"/>
-    <ul class="flex flex-wrap gap-4 justify-center p-4">
+    <ul class="spellcard_list flex flex-wrap gap-4 justify-center p-4 max-h-screen overflow-auto">
       <li class="list-none" v-for="spell in selectedSpells" :key="spell.index">
         <SpellCard :spell="spell"/>
       </li>
