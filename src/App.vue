@@ -2,7 +2,7 @@
   <section>
     <Filter :filter="filter" @passSelectedClass="updateSelectedClasses($event)"/>
     <ul class="flex flex-wrap gap-4 justify-center p-4">
-      <li class="list-none" v-for="spell in spells" :key="spell.index">
+      <li class="list-none" v-for="spell in selectedSpells" :key="spell.index">
         <SpellCard :spell="spell"/>
       </li>
     </ul>
@@ -25,18 +25,27 @@
       return {
         selectedClasses: [] as string[],
         spells: [] as Spell[],
+        selectedSpells: [] as Spell[],
         filter: {
           spellsPerClass: new Map<string, number>()
         }
       }
     },
     methods: {
+      updateSelectedSpells() {
+        const newSelectedSpells = this.spells.filter((spell: Spell) => {
+          return spell.classes.some((classItem) => this.selectedClasses.includes(classItem.index))
+        })
+        this.selectedSpells = newSelectedSpells.length ? newSelectedSpells : this.spells
+      },
       updateSelectedClasses(selectedClass: string) {
         if (this.selectedClasses.includes(selectedClass)) {
           this.selectedClasses = this.selectedClasses.filter((classItem) => classItem !== selectedClass)
         } else {
           this.selectedClasses.push(selectedClass)
         }
+
+        this.updateSelectedSpells()
       }
     },
     mounted() {
@@ -69,6 +78,8 @@
       }
 
       fetchSpells()
+
+      this.selectedSpells = this.spells
     }
   })
 </script>
