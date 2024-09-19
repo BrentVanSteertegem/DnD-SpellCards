@@ -3,7 +3,7 @@ export type Spell = {
     name: string,
     level: number,
     school: {
-        name: string
+        name: string,
     },
     casting_time: string,
     range: string,
@@ -17,5 +17,9 @@ export type Spell = {
 export type Class = {
     index: string,
     name: string,
-    url: string
+    url: string,
+}
+
+export type filter = {
+    spellsPerClass: Map<string, number>,
 }
